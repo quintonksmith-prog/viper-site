@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="description" content="Viper Software builds property intelligence AI agents, workflow automation systems, and high-performance websites for modern businesses.">
 <title>Viper Software — Property Intelligence AI, Workflow Automation &amp; Web Design</title>
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://viper-software.com/">
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://viper-software.com/">
+<meta property="og:title"       content="Viper Software — Property Intelligence AI, Workflow Automation &amp; Web Design">
+<meta property="og:description" content="Viper Software builds property intelligence AI agents, workflow automation systems, and high-performance websites for modern businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -388,10 +394,55 @@ footer {
 }
 .callout strong { color: var(--bright); }
 
+/* ── HAMBURGER ───────────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px; height: 20px;
+  background: transparent; border: none;
+  cursor: pointer; padding: 0; z-index: 201;
+}
+.hamburger span {
+  display: block; height: 2px; width: 100%;
+  background: var(--bright); border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+  transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* ── MOBILE MENU ─────────────────────────────────────────────── */
+.mobile-menu {
+  display: none;
+  position: fixed; top: 60px; left: 0; right: 0; z-index: 199;
+  background: rgba(7,9,12,.98); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px 24px;
+  flex-direction: column; gap: 2px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu-link {
+  display: block; padding: 13px 16px;
+  color: var(--text); font-size: 15px; font-weight: 500;
+  cursor: pointer; border-radius: var(--r);
+  border-left: 3px solid transparent;
+  transition: all .15s;
+}
+.mobile-menu-link:hover { color: var(--bright); background: var(--bg2); }
+.mobile-menu-link.on { color: var(--bright); border-left-color: var(--g); background: var(--g-glow); }
+.mobile-menu-btns {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-top: 14px; padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width: 800px) {
   nav { padding: 0 20px; }
-  .nav-links { display: none; }
+  .nav-links, .nav-ctas { display: none; }
+  .hamburger { display: flex; }
   .section, .section-sm { padding: 60px 20px; }
   .hero { padding: 80px 20px 64px; }
   .col-2 { grid-template-columns: 1fr; gap: 32px; }
@@ -425,7 +476,25 @@ footer {
     <button class="btn btn-ghost btn-sm" onclick="goTo('contact')">Book Demo</button>
     <button class="btn btn-primary btn-sm" onclick="goTo('contact')">Get Started</button>
   </div>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <span class="mobile-menu-link on" data-page="home"         onclick="mobileGoTo('home')">Home</span>
+  <span class="mobile-menu-link"    data-page="products"     onclick="mobileGoTo('products')">Products</span>
+  <span class="mobile-menu-link"    data-page="ai-workflows" onclick="mobileGoTo('ai-workflows')">AI Workflows</span>
+  <span class="mobile-menu-link"    data-page="web-design"   onclick="mobileGoTo('web-design')">Web Design</span>
+  <span class="mobile-menu-link"    data-page="about"        onclick="mobileGoTo('about')">About</span>
+  <span class="mobile-menu-link"    data-page="contact"      onclick="mobileGoTo('contact')">Contact</span>
+  <div class="mobile-menu-btns">
+    <button class="btn btn-ghost btn-full"   onclick="mobileGoTo('contact')">Book Demo</button>
+    <button class="btn btn-primary btn-full" onclick="mobileGoTo('contact')">Get Started</button>
+  </div>
+</div>
 
 
 <!-- ═══════════════════════════════════════════
@@ -1234,7 +1303,7 @@ footer {
           <div style="font-family:var(--mono);font-size:10px;color:var(--g);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">Ready to automate?</div>
           <h3 style="font-family:var(--head);font-size:clamp(22px,3vw,32px);letter-spacing:2px;color:var(--bright);margin-bottom:12px;line-height:1.1">Let's build this for you.</h3>
           <p style="font-size:14px;color:var(--dim);margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.75">Book a free 20-minute discovery call. We'll map your workflows, identify what's worth automating, and give you a clear scope and price — no obligation.</p>
-          <button class="btn btn-primary btn-lg" onclick="goTo('contact')">Book a Free Discovery Call →</button>
+          <button class="btn btn-primary btn-lg" onclick="bookCallWithAnalysis()">Book a Free Discovery Call →</button>
         </div>
       </div>
     </div>
@@ -1481,6 +1550,48 @@ function goTo(page) {
   }
   refreshFooterYears();
 }
+
+// ── Workflow → contact pre-fill ───────────────────────────────
+function bookCallWithAnalysis() {
+  const userInput  = (document.getElementById('workflow-input')?.value || '').trim();
+  const aiOutput   = (document.getElementById('workflow-result-body')?.innerText || '').trim();
+  const msgEl      = document.getElementById('message');
+  const interestEl = document.getElementById('interest');
+
+  if (msgEl && (userInput || aiOutput)) {
+    msgEl.value =
+      '[From Workflow Analyzer]\n\n' +
+      '— What they described —\n' + userInput +
+      '\n\n— AI Analysis —\n' + aiOutput;
+  }
+  if (interestEl) interestEl.value = 'AI Agent Services';
+  goTo('contact');
+}
+
+// ── Mobile hamburger menu ─────────────────────────────────────
+function toggleMobileMenu() {
+  document.getElementById('hamburger-btn').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+function mobileGoTo(page) {
+  goTo(page);
+  document.getElementById('hamburger-btn').classList.remove('open');
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.querySelectorAll('.mobile-menu-link').forEach(l => {
+    l.classList.toggle('on', l.dataset.page === page);
+  });
+}
+
+document.addEventListener('click', function(e) {
+  const btn  = document.getElementById('hamburger-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (!btn || !menu) return;
+  if (menu.classList.contains('open') && !btn.contains(e.target) && !menu.contains(e.target)) {
+    btn.classList.remove('open');
+    menu.classList.remove('open');
+  }
+});
 
 // ── Product tabs ─────────────────────────────────────────────
 function switchTab(id) {
