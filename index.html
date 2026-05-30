@@ -523,14 +523,14 @@ footer {
     <h2 class="heading">Software that<br>does the work</h2>
     <p class="subheading">Viper Software builds property intelligence AI agents, workflow automation systems, and high-performance websites — with ongoing management when you need it.</p>
     <div class="grid-2">
-      <div class="card card-green">
-        <div class="card-icon">⚡</div>
+      <div class="card card-blue">
+        <div class="card-icon">⚙️</div>
         <div class="card-grow">
-          <div class="card-title">GridScan Pro</div>
-          <div class="card-body">Scrape, score, and rank power-ready industrial properties. Built for brokers sourcing sites for data centers, EV infrastructure, and advanced manufacturing.</div>
-          <div class="chips"><span class="chip">Property Intelligence AI</span><span class="chip">AI Vision</span><span class="chip">PDF Reports</span></div>
+          <div class="card-title">Workflow Automation</div>
+          <div class="card-body">Connect your tools and automate your repeatable processes using n8n — no AI overhead, no per-task fees. Built and managed for your business.</div>
+          <div class="chips"><span class="chip">Workflow Automation</span><span class="chip">n8n</span><span class="chip">No AI Costs</span></div>
         </div>
-        <button class="btn btn-outline" style="margin-top:20px" onclick="goTo('products'); setTimeout(() => switchTab('gs'), 50)">Learn More →</button>
+        <button class="btn btn-web" style="margin-top:20px" onclick="goTo('products')">Learn More →</button>
       </div>
       <div class="card card-purple">
         <div class="card-icon">🤖</div>
@@ -615,183 +615,84 @@ footer {
 
     <!-- Tabs -->
     <div class="tabs" style="margin-top:28px">
-      <div class="tab on"  id="tab-btn-gs" onclick="switchTab('gs')">GridScan Pro</div>
-      <div class="tab"     id="tab-btn-ai" onclick="switchTab('ai')">AI Agent Services</div>
+      <div class="tab on"  id="tab-btn-workflows" onclick="switchTab('workflows')">Workflow Automation</div>
+      <div class="tab"     id="tab-btn-ai"        onclick="switchTab('ai')">AI Agent Services</div>
     </div>
 
-    <!-- ── GridScan Tab ── -->
-    <div class="tab-pane on" id="tab-gs">
+    <!-- ── Workflow Automation Tab ── -->
+    <div class="tab-pane on" id="tab-workflows">
+
+      <!-- Header -->
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px">
+        <div style="width:48px;height:48px;background:rgba(64,196,255,.1);border:1px solid rgba(64,196,255,.25);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">⚙️</div>
+        <div>
+          <div style="font-family:var(--head);font-size:13px;letter-spacing:4px;color:var(--blue);margin-bottom:4px">WORKFLOW AUTOMATION</div>
+          <div style="font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:2px">SOFTWARE TIER · NO AI MODEL COSTS</div>
+        </div>
+      </div>
+
+      <p style="color:var(--text);line-height:1.8;margin-bottom:36px;font-size:15px;max-width:760px">Connect your tools. Automate your repeatable processes. No AI overhead — just reliable, logic-based automation that runs exactly the way you define it.</p>
+
+      <!-- Two-column intro -->
       <div class="col-2" style="margin-bottom:52px">
         <div>
-          <div style="font-family:var(--head);font-size:13px;letter-spacing:4px;color:var(--g);margin-bottom:10px">GRIDSCAN PRO</div>
-          <h3 style="font-family:var(--head);font-size:42px;letter-spacing:2px;color:var(--bright);line-height:1;margin-bottom:16px">Property Intelligence<br><span style="color:var(--g)">AI</span></h3>
-          <p style="color:var(--text);line-height:1.8;margin-bottom:14px;font-size:15px">GridScan Pro is purpose-built property intelligence AI for teams sourcing industrial sites with the electrical infrastructure for AI data centers, EV hubs, and advanced manufacturing.</p>
-          <p style="color:var(--dim);font-size:13px;line-height:1.8;margin-bottom:28px">Scores every listing across 40+ power indicators and uses AI vision to analyze transformer photos, electrical panels, and utility equipment — then delivers a ranked, downloadable PDF report.</p>
-          <button class="btn btn-primary" onclick="goTo('contact')">Request a Demo</button>
+          <div class="label">What it is</div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
+            <div style="display:flex;gap:10px;font-size:14px;color:var(--text)"><span style="color:var(--blue);flex-shrink:0">→</span>Built on <strong style="color:var(--bright)">n8n</strong>, an open-source automation platform more powerful than Zapier</div>
+            <div style="display:flex;gap:10px;font-size:14px;color:var(--text)"><span style="color:var(--blue);flex-shrink:0">→</span>Connects your existing tools: CRM, email, calendar, Slack, project management, invoicing, and more</div>
+            <div style="display:flex;gap:10px;font-size:14px;color:var(--text)"><span style="color:var(--blue);flex-shrink:0">→</span>Runs on a low-cost VPS — no per-task fees, no AI model costs, no third-party automation platform markups</div>
+            <div style="display:flex;gap:10px;font-size:14px;color:var(--text)"><span style="color:var(--blue);flex-shrink:0">→</span>You own the workflows and the infrastructure</div>
+          </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="feat-card"><span style="font-size:18px;flex-shrink:0;margin-top:2px">⚡</span><div><div class="feat-card-title">Power Keyword Scoring</div><div class="feat-card-body">40+ weighted keywords — each carrying a score reflecting true infrastructure signal strength, from "480V" to "utility substation."</div></div></div>
-          <div class="feat-card"><span style="font-size:18px;flex-shrink:0;margin-top:2px">🔍</span><div><div class="feat-card-title">AI Vision Analysis</div><div class="feat-card-body">Claude analyzes property images to detect transformers, switchgear, and voltage labels — and estimates available MW capacity.</div></div></div>
-          <div class="feat-card"><span style="font-size:18px;flex-shrink:0;margin-top:2px">📊</span><div><div class="feat-card-title">Live Dashboard + PDF</div><div class="feat-card-body">Results stream into your browser as they arrive. Every session produces a branded, downloadable PDF report with scoring breakdowns.</div></div></div>
-          <div class="feat-card"><span style="font-size:18px;flex-shrink:0;margin-top:2px">🗺️</span><div><div class="feat-card-title">Multi-Market</div><div class="feat-card-body">Run searches across any US city simultaneously. Each market is an independent scrape job.</div></div></div>
+        <div>
+          <div class="label">Who it's for</div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
+            <div style="display:flex;gap:10px;font-size:14px;color:var(--text)"><span style="color:var(--blue);flex-shrink:0">→</span>Businesses with clear, repeatable processes that run the same way every time</div>
+            <div style="display:flex;gap:10px;font-size:14px;color:var(--text)"><span style="color:var(--blue);flex-shrink:0">→</span>Anyone currently doing manual data entry, copy-pasting between tools, or building the same report by hand</div>
+            <div style="display:flex;gap:10px;font-size:14px;color:var(--text)"><span style="color:var(--blue);flex-shrink:0">→</span>Operators who want automation without paying for AI they don't need</div>
+            <div style="display:flex;gap:10px;font-size:14px;color:var(--text)"><span style="color:var(--blue);flex-shrink:0">→</span>A good starting point before deciding whether an AI agent is worth the added cost</div>
+          </div>
         </div>
+      </div>
+
+      <!-- Pricing block -->
+      <div style="background:rgba(64,196,255,.06);border:1px solid rgba(64,196,255,.2);border-top:2px solid var(--blue);border-radius:var(--r2);padding:24px 28px;max-width:520px;margin-bottom:52px">
+        <div style="font-family:var(--mono);font-size:9px;color:var(--blue);letter-spacing:2px;margin-bottom:8px">PRICING</div>
+        <div style="font-family:var(--head);font-size:32px;color:var(--bright);letter-spacing:1px;line-height:1;margin-bottom:10px">Custom Quote</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.75">Scoped on a free discovery call based on your tools, number of workflows, and complexity. No markup on platform costs.</div>
       </div>
 
       <hr class="divider" style="margin-bottom:44px">
 
-      <!-- Pricing -->
-      <div class="center" style="margin-bottom:12px">
-        <div class="label label-center">Pricing</div>
-        <h3 style="font-family:var(--head);font-size:34px;letter-spacing:2px;color:var(--bright);margin-bottom:16px">Simple, transparent pricing</h3>
-        <p style="color:var(--dim);font-size:13px;max-width:560px;margin:0 auto 32px;line-height:1.8">One flat <strong style="color:var(--bright)">$149 platform access fee</strong> — same for every plan. Your monthly subscription unlocks features and markets. <strong style="color:var(--g)">First month free</strong> on any plan.</p>
+      <!-- What gets automated -->
+      <div class="center" style="margin-bottom:32px">
+        <div class="label label-center">What Gets Automated</div>
+        <h3 style="font-family:var(--head);font-size:34px;letter-spacing:2px;color:var(--bright);margin-bottom:12px">Built for real businesses</h3>
+        <p style="color:var(--dim);font-size:13px;max-width:500px;margin:0 auto">These are starting points — if you can describe it, we can build it.</p>
+      </div>
+      <div class="grid-3" style="max-width:960px;margin:0 auto 52px">
+        <div class="card" style="padding:20px 22px"><div class="card-title" style="color:var(--blue)">Lead Management</div><div class="card-body">New inquiry arrives → scored and tagged → added to CRM → follow-up email sent → task created if no response in 3 days.</div></div>
+        <div class="card" style="padding:20px 22px"><div class="card-title" style="color:var(--blue)">Client Onboarding</div><div class="card-body">Contract signed → welcome email sent → intake form triggered → calendar link sent → project folder created.</div></div>
+        <div class="card" style="padding:20px 22px"><div class="card-title" style="color:var(--blue)">Invoice &amp; Payments</div><div class="card-body">Job marked complete → invoice generated → sent to client → payment tracked → follow-up triggered if unpaid.</div></div>
+        <div class="card" style="padding:20px 22px"><div class="card-title" style="color:var(--blue)">Reporting</div><div class="card-body">Pull data from multiple sources on a schedule → format it → deliver it to your inbox or Slack. No more building the same report by hand.</div></div>
+        <div class="card" style="padding:20px 22px"><div class="card-title" style="color:var(--blue)">Internal Notifications</div><div class="card-body">Any trigger in any tool → instant alert to the right person via Slack, email, or SMS. No more checking five dashboards.</div></div>
+        <div class="card" style="padding:20px 22px"><div class="card-title" style="color:var(--blue)">Form → Action</div><div class="card-body">Any form submission on your website or CRM → automatically routed, stored, assigned, and actioned without anyone touching it.</div></div>
       </div>
 
-      <div class="pricing-grid">
-
-        <!-- Starter -->
-        <div class="price-card">
-          <div class="price-head"><span class="badge badge-blue">Starter</span></div>
-          <div class="price-body">
-            <div style="display:flex;align-items:baseline;gap:5px;margin-bottom:3px">
-              <span class="price-amount">$149</span><span class="price-per">/mo</span>
-            </div>
-            <div class="price-tags">
-              <span class="price-tag price-tag-free">✦ First month free</span>
-              <span class="price-tag price-tag-access">$149 one-time access fee</span>
-            </div>
-            <div class="feat-label">Included</div>
-            <ul class="feat-list">
-              <li>1 active market at a time</li>
-              <li>Weekly scrape cadence</li>
-              <li>Top 25 listings per run</li>
-              <li>Keyword scoring engine</li>
-              <li>PDF report per session</li>
-              <li>Email support</li>
-            </ul>
-            <div class="feat-divider"></div>
-            <div class="feat-label">Not included</div>
-            <ul class="feat-list" style="margin-bottom:18px">
-              <li class="dim">AI vision image analysis</li>
-              <li class="dim">Multiple simultaneous markets</li>
-              <li class="dim">XLSX export</li>
-            </ul>
-            <button class="btn btn-ghost btn-full" onclick="goTo('contact')">Get Started</button>
-          </div>
-        </div>
-
-        <!-- Professional -->
-        <div class="price-card price-card-pro">
-          <div class="price-head">
-            <span class="badge badge-green">Professional</span>
-            <span class="badge badge-green" style="font-size:7px">Most Popular</span>
-          </div>
-          <div class="price-body">
-            <div style="display:flex;align-items:baseline;gap:5px;margin-bottom:3px">
-              <span class="price-amount">$399</span><span class="price-per">/mo</span>
-            </div>
-            <div class="price-tags">
-              <span class="price-tag price-tag-free">✦ First month free</span>
-              <span class="price-tag price-tag-access">$149 one-time access fee</span>
-            </div>
-            <div class="feat-label">Everything in Starter, plus</div>
-            <ul class="feat-list">
-              <li>Up to 5 markets simultaneously</li>
-              <li>Daily scrape cadence</li>
-              <li>Unlimited listings per run</li>
-              <li><strong style="color:var(--bright)">AI vision scoring</strong> — MW estimates from property photos</li>
-              <li>Full live dashboard access</li>
-              <li>XLSX + PDF export</li>
-              <li>Priority email support</li>
-            </ul>
-            <div class="feat-divider"></div>
-            <div class="roi-box">
-              <div class="roi-label" style="color:var(--g)">ROI CONTEXT</div>
-              <div style="font-size:11px;color:var(--dim);line-height:1.6">One industrial deal at $3M with a 2.5% commission = $75,000. That's <span style="color:var(--g)">15+ years</span> of this subscription.</div>
-            </div>
-            <button class="btn btn-primary btn-full" onclick="goTo('contact')">Get Started</button>
-          </div>
-        </div>
-
-        <!-- Enterprise -->
-        <div class="price-card price-card-ent">
-          <div class="price-head"><span class="badge badge-amber">Enterprise</span></div>
-          <div class="price-body">
-            <div style="display:flex;align-items:baseline;gap:5px;margin-bottom:3px">
-              <span class="price-amount price-amount-amber">$999</span><span class="price-per">/mo</span>
-            </div>
-            <div class="price-tags">
-              <span class="price-tag price-tag-amber">Starting price · scales with seats</span>
-              <span class="price-tag price-tag-access">Custom onboarding included</span>
-            </div>
-            <div class="feat-label">Everything in Professional, plus</div>
-            <ul class="feat-list">
-              <li>Unlimited markets</li>
-              <li>Continuous / real-time scraping</li>
-              <li><strong style="color:var(--bright)">API access</strong> — pipe data into your CRM or underwriting models</li>
-              <li><strong style="color:var(--bright)">Multiple team seats</strong></li>
-              <li><strong style="color:var(--bright)">Custom keyword sets</strong> — tune to your deal thesis</li>
-              <li><strong style="color:var(--bright)">White-label option</strong></li>
-              <li>Monthly strategy call</li>
-              <li>Uptime SLA guarantee</li>
-            </ul>
-            <div class="feat-divider"></div>
-            <div class="roi-box roi-box-amber">
-              <div class="roi-label" style="color:var(--amber)">WHO THIS IS FOR</div>
-              <div style="font-size:11px;color:var(--dim);line-height:1.6">REITs and investment groups running $50M+ in annual acquisitions who need GridScan data in their own tech stack.</div>
-            </div>
-            <button class="btn btn-amber btn-full" onclick="goTo('contact')">Contact Us</button>
-          </div>
-        </div>
+      <!-- Callout -->
+      <div class="callout" style="max-width:760px;margin:0 auto 52px">
+        <strong>Not sure if you need AI?</strong> If your process follows the same steps every time and doesn't require judgment or unstructured input — workflow automation is probably all you need, and it costs less to build and run.
       </div>
 
-      <!-- Per-tier context -->
-      <div style="max-width:980px;margin:20px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center">
-        <div style="font-family:var(--mono);font-size:10px;color:var(--dim);line-height:1.7;padding:0 8px">Solo broker testing one market. First month free, cancel anytime.</div>
-        <div style="font-family:var(--mono);font-size:10px;color:var(--g);line-height:1.7;padding:0 8px">Active brokers and small firms working multiple markets daily. AI vision is the key differentiator.</div>
-        <div style="font-family:var(--mono);font-size:10px;color:var(--amber);line-height:1.7;padding:0 8px">Investment groups and REITs who need data in their own systems, not just PDFs.</div>
+      <!-- CTA -->
+      <div style="text-align:center;padding:52px 40px;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:var(--r2)">
+        <div class="label label-center" style="justify-content:center;margin-bottom:14px">Free Discovery Call</div>
+        <h3 style="font-family:var(--head);font-size:clamp(28px,4vw,42px);letter-spacing:2px;color:var(--bright);margin-bottom:14px;line-height:1.1">Map your automation<br>opportunity</h3>
+        <p style="color:var(--dim);font-size:15px;max-width:520px;margin:0 auto 30px">Free 20-minute discovery call. We walk through your current workflows, identify what's worth automating, and tell you honestly whether you need AI or not.</p>
+        <button class="btn btn-primary btn-lg" onclick="goTo('contact')">Book a Free Discovery Call →</button>
       </div>
 
-      <!-- FAQ -->
-      <div class="faq-wrap">
-        <div class="faq-title">Common Questions</div>
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">What exactly does GridScan Pro look for in a listing?<span class="faq-icon">+</span></div>
-          <div class="faq-a">GridScan analyzes every word in a listing's description and any available text — then scores it against 40+ weighted power infrastructure keywords. Higher-voltage indicators like "13.8kV," "utility substation," and "69kV" carry the heaviest scores because they signal genuinely industrial-scale electrical capacity. More common terms like "3-phase" or "480V" carry lighter scores. AI vision then adds an image analysis layer — scanning property photos for transformers, switchgear, electrical panels, and voltage labels to estimate MW capacity independently of the text.</div>
-        </div>
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">How accurate is the AI image analysis?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Accuracy depends on the quality of listing photos. When a property photo clearly shows a pad-mounted transformer, breaker labeling, or electrical panel specs, the AI can estimate MW capacity with reasonable confidence using standard sizing formulas (e.g., a visible 2,500 kVA transformer ≈ 2 MW available). When photos are low-resolution, show only exterior shots, or contain no electrical equipment, the AI scores conservatively (Score: 1) rather than guessing — so false positives from image analysis are rare. The keyword score always runs independently, meaning a property with strong textual indicators will score high even if image analysis is inconclusive.</div>
-        </div>
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">What score should I be filtering for?<span class="faq-icon">+</span></div>
-          <div class="faq-a">It depends on your use case. For AI data center or large-scale EV charging site sourcing, we recommend filtering for a combined score of 20+ — properties at that level typically have explicit high-voltage references (substation, 13.8kV, MVA) in their listings. For general heavy manufacturing or cold storage sourcing, a threshold of 8–15 catches properties with solid 3-phase, 480V infrastructure without requiring utility-grade power. Starter users can adjust the threshold in the dashboard; Professional and Enterprise clients can additionally tune individual keyword weights to match their specific deal thesis.</div>
-        </div>
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">Which markets does GridScan cover?<span class="faq-icon">+</span></div>
-          <div class="faq-a">GridScan covers any US city or metro area — you type a location and it resolves it to a precise geographic boundary for the search. Starter plans run one market at a time. Professional plans support up to 5 simultaneous markets on a daily scrape cadence. Enterprise plans are unlimited. High-demand markets for power-ready industrial sourcing include Dallas–Fort Worth, Phoenix, Houston, Las Vegas, Atlanta, Denver, and the Carolinas — all active corridors for data center and advanced manufacturing investment.</div>
-        </div>
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">What does the $149 platform access fee cover?<span class="faq-icon">+</span></div>
-          <div class="faq-a">It's a one-time platform unlock — paid once when you sign up, and it permanently activates your account regardless of which plan you're on or how many times you switch plans. Your first month of whichever subscription tier you choose is free, so the access fee is your only cost for the first 30 days. Think of it as the key to the platform — you pay for it once and it never expires.</div>
-        </div>
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">Can I customize the keyword scoring to match my deal criteria?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Yes — keyword customization is available on the Professional and Enterprise plans. You can adjust the weight of any existing keyword, add proprietary terms relevant to your asset class (e.g., "cold storage," "cannabis," "crypto mining"), and remove keywords that aren't relevant to your search thesis. Enterprise clients can maintain multiple custom keyword profiles for different deal types or asset classes running simultaneously.</div>
-        </div>
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-q">What format does the output come in?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Results stream live into your browser dashboard as they come in — you see properties scored in real time. At the end of each session, you can download a branded PDF report with full scoring breakdowns, keyword matches, image analysis summaries, and property URLs — sorted by final score. Professional and Enterprise plans additionally export to XLSX, which includes all raw scoring data and is structured for import into underwriting models or CRM pipelines. Enterprise API access lets you query results programmatically without ever touching the dashboard.</div>
-        </div>
-      </div>
-
-      <!-- GridScan Demo CTA -->
-      <div style="text-align:center;margin-top:60px;padding:52px 40px;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:var(--r2)">
-        <div class="label label-center" style="justify-content:center;margin-bottom:14px">Live Demo</div>
-        <h3 style="font-family:var(--head);font-size:clamp(28px,4vw,42px);letter-spacing:2px;color:var(--bright);margin-bottom:14px;line-height:1.1">See GridScan Pro<br>in action</h3>
-        <p style="color:var(--dim);margin-bottom:30px;font-size:15px">Book a live demo and we'll run a real search on any US market in real time — no slides, just the tool.</p>
-        <button class="btn btn-primary btn-lg" onclick="goTo('contact')">Book a Demo</button>
-      </div>
-    </div><!-- end tab-gs -->
+    </div><!-- end tab-workflows -->
 
     <!-- ── AI Agents Tab ── -->
     <div class="tab-pane" id="tab-ai">
@@ -1087,7 +988,7 @@ footer {
   <div class="section">
     <div class="label">Contact</div>
     <h2 class="heading">Request a Demo<br>or Call</h2>
-    <p class="subheading">Fill out the form and we'll reach out within one business day to schedule a call, answer questions, or walk you through a live demo — GridScan Pro, automation, or web projects.</p>
+    <p class="subheading">Fill out the form and we'll reach out within one business day to schedule a call, answer questions, or walk you through a live demo — workflow automation, AI agents, or web projects.</p>
 
     <div class="form-wrap">
       <!-- ↓ IMPORTANT: Replace mkopjwgw with your real ID from formspree.io -->
@@ -1116,7 +1017,7 @@ footer {
           <div class="form-group">
             <label class="f-label" for="interest">I'm Interested In</label>
             <select class="f-select" id="interest" name="interest">
-              <option value="GridScan Pro">GridScan Pro</option>
+              <option value="Workflow Automation">Workflow Automation</option>
               <option value="AI Agent Services">AI Agent Services</option>
               <option value="Website Design &amp; Development">Website Design &amp; Development</option>
               <option value="Both Products">Both Products</option>
